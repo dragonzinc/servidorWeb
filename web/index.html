@@ -24,8 +24,83 @@
         <meta name="msapplication-TileImage" content="/web/appicons/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
         <link href="/web/appicons/manifest.json" rel="manifest">
-    </head>
+</head>
+        <style>
+
+        .frontendMenuMobil {
+            position: fixed;
+            height: 100%;
+            width: 0;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background-color: #00324b;
+            overflow-x: hidden;
+            transition: 0.4s;
+            padding: 1rem 0;
+            box-sizing:border-box;
+
+        }
+
+        .frontendMenuMobil .boton-cerrar {
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            font-size: 2rem;
+            display: block;
+            padding: 0;
+            line-height: 1.5rem;
+            margin: 0;
+            height: 32px;
+            width: 32px;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        .frontendMenuMobil ul, .frontendMenuMobil li{
+            margin:0;
+            padding:0;
+            list-style:none inside;
+        }
+
+        .frontendMenuMobil ul {
+            margin: 4rem auto;
+            display: block;
+            width: 80%;
+            min-width:200px;
+        }
+
+        .frontendMenuMobil a {
+            display: block;
+            font-size: 120%;
+            color: #eee;
+            text-decoration: none;
+
+        }
+
+        .frontendMenuMobil a:hover{
+            color:#fff;
+            background-color: #f90;
+
+        }
+
+
+        .abrir-cerrar {
+            color: #2E88C7;
+            font-size:1rem;
+        }
+
+        #abrir {
+
+        }
+        #cerrar {
+            display:none;
+        }
+
+        </style>
+
     <body onload='inicia()'>
+      <h1>MUNDO IMPERIAL</h1>
         <div id='frontendMenuWeb' class='flexRow desktop'>
             <div class='botoMenu' onclick='navegacio.canviaSeccio("frontendHome")'>Inici</div>
             <div class='botoMenu' onclick='navegacio.canviaSeccio("frontendPresentacio")'>Presentació</div>
@@ -36,28 +111,138 @@
             <div id='botoGestioProductesWeb' class='botoMenu none' onclick='navegacio.canviaSeccio("backofficeProductes")'>Gestió productes</div>
             <div id='botoLogoutWeb' class='botoMenu none' onclick='login.tancaLaSessio()'>Sortir</div>
         </div>
-        <div id='frontendMenuMobil' class='flexColumn mobile'>
-            <div class='botoMenu' onclick='navegacio.canviaSeccio("frontendHome")'>Inici</div>
-            <div class='botoMenu' onclick='navegacio.canviaSeccio("frontendPresentacio")'>Presentació</div>
-            <div class='botoMenu' onclick='navegacio.canviaSeccio("frontendProductes")'>Productes</div>
-            <div class='botoMenu' onclick='navegacio.canviaSeccio("frontendContacte")'>Contacte</div>
-            <div id='botoLoginMobil' class='botoMenu' onclick='popups.mostraPopup("popupLogin")'>Login backoffice</div>
-            <div id='botoGestioUsuarisMobil' class='botoMenu none' onclick='navegacio.canviaSeccio("backofficeUsuaris")'>Gestió usuaris</div>
-            <div id='botoGestioProductesMobil' class='botoMenu none' onclick='navegacio.canviaSeccio("backofficeProductes")'>Gestió productes</div>
-            <div id='botoLogoutMobil' class='botoMenu none' onclick='login.tancaLaSessio()'>Sortir</div>
+        <div id="frontendMenuMobil" class="flexColumn mobile frontendMenuMobil" >
+            <a href="javascript://" class="boton-cerrar" onclick="ocultar()">x</a>
+            <ul>
+                <li><a class='botoMenu' onclick='navegacio.canviaSeccio("frontendHome");ocultar()'>Inici</a></li>
+                <li><a class='botoMenu' onclick='navegacio.canviaSeccio("frontendPresentacio");ocultar()'>Presentació</a></li>
+                <li><a class='botoMenu' onclick='navegacio.canviaSeccio("frontendProductes");ocultar()'>Productes</a></li>
+                <li><a class='botoMenu' onclick='navegacio.canviaSeccio("frontendContacte");ocultar()'>Contacte</a></li>
+                <li><a id='botoLoginMobil' class='botoMenu' onclick='popups.mostraPopup("popupLogin");ocultar()'>Login backoffice</a></li>
+                <li><a id='botoGestioUsuarisMobil' class='botoMenu none' onclick='navegacio.canviaSeccio("backofficeUsuaris");ocultar()'>Gestió usuaris</a></li>
+                <li><a id='botoGestioProductesMobil' class='botoMenu none' onclick='navegacio.canviaSeccio("backofficeProductes");ocultar()'>Gestió productes</a></li>
+                <li><a id='botoLogoutMobil' class='botoMenu none' onclick='login.tancaLaSessio();ocultar()'>Sortir</a></li>
+            </ul>
         </div>
-        <div id='frontendHome'>
-            Pàgina principal
+      <a id="abrir" class="abrir-cerrar mobile" href="javascript:void(0)" onclick="mostrar()"><i class="material-icons">menu</i></a>
+      <a id="cerrar" class="abrir-cerrar" href="#" onclick="ocultar()"style="display: none;">Cerrar menu</a>
+        <div id='frontendHome' class="flexColumn">
+
+
+        <div class="pasadorimagen">
+
+
+          <div class="container">
+
+            <ul class="slider">
+              <li id="slide1">
+                <img src="https://d.newsweek.com/en/full/1561143/amsterdam.jpg"/>
+              </li>
+              <li id="slide2">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3947459/sunset.jpg"/>
+              </li>
+              <li id="slide3">
+                <img src="https://traveltolivewebblog.files.wordpress.com/2018/04/el-monte-fuji-la-montana-mas-alta-de-japon-1440x810.jpg"/>
+              </li>
+            </ul>
+
+            <ul class="menu">
+              <li>
+                <a href="#slide1">1</a>
+              </li>
+              <li>
+                <a href="#slide2">2</a>
+              </li>
+               <li>
+                <a href="#slide3">3</a>
+              </li>
+            </ul>
+
+          </div>
+  </div>
+            <h2 center>Buscar por tipos de alojamiento</h2>
+            <div class="alojamiento">
+              <div class="hotel">
+
+
+              <img src="https://r-cf.bstatic.com/xdata/images/xphoto/square300/57584488.webp?k=bf724e4e9b9b75480bbe7fc675460a089ba6414fe4693b83ea3fdd8e938832a6&o=" width="200px" height="200px"/>
+              <h3>hotel</h3>
+          </div>
+              <div class="aparta">
+              <img src="https://r-cf.bstatic.com/static/img/theme-index/carousel_320x240/card-image-apartments_300/9f60235dc09a3ac3f0a93adbc901c61ecd1ce72e.jpg"width="200px" height="200px">
+              <h3>apartamento</h3>
+            </div>
+              <div class="resort">
+                <img src="https://r-cf.bstatic.com/static/img/theme-index/carousel_320x240/bg_resorts/6f87c6143fbd51a0bb5d15ca3b9cf84211ab0884.jpg"width="200px" height="200px">
+                <h3>resort</h3>
+              </div>
+              <div class="villas">
+                <img src="https://q-cf.bstatic.com/static/img/theme-index/carousel_320x240/card-image-villas_300/dd0d7f8202676306a661aa4f0cf1ffab31286211.jpg"width="200px" height="200px">
+                <h3>villas</h3>
+              </div>
+              <div class="chalets">
+                <img src="https://r-cf.bstatic.com/static/img/theme-index/carousel_320x240/card-image-chalet_300/8ee014fcc493cb3334e25893a1dee8c6d36ed0ba.jpg"width="200px" height="200px">
+                <h3>Chalets <br> de montaña</h3>
+              </div>
+              <div class="apartahotel">
+                <img src="https://q-cf.bstatic.com/static/img/theme-index/carousel_320x240/bg_aparthotel/10e092f390b128dcff92727912299eef7824b751.jpg"width="200px" height="200px">
+                <h3>apartahotel</h3>
+              </div>
+              <div class="motel">
+                <img src="https://r-cf.bstatic.com/static/img/theme-index/carousel_320x240/bg_motels/9673cd1b55cbc1e1cdaeae09d87d16aa9d84d5f7.jpg"width="200px" height="200px">
+                <h3>motel</h3>
+              </div>
+
+            </div>
         </div>
         <div id='frontendPresentacio'>
-            Pàgina amb una presentacio de l'empresa
+
+          <div class="presenta">
+            <div class="imagen">
+
+              <img class="redondo" src="https://assets.entrepreneur.com/content/3x2/2000/20190304001639-oficinas.jpeg" width="700px" class="center"/>
+
+
+          </div>
+            <div class="contepresentacion">
+              <h2>Presentación</h2>
+              <h3>Esta página fue creada por Raúl Vélez, con la idea <br> de competir con las demás páginas web,<br> y para dar un mejor precio en los viajes para que la gente <br> con bajo poder adquisitivo, pueda permitirse un viaje y disfrutar <br> relajandose entre todas nuestras ofertas. </h3>
+            </div>
+            <div class="imagen2">
+
+
+
+              <img class="redondo" src="https://www.ruubay.com/wp-content/uploads/agencia-de-viajes-barcelo-bergara-gipuzkoa_266726.jpg" width="700px" align="right"><h2>Historia</h2> <h3>La página fue ideada en 2019, en un principio no tuvo <br> buena recepción por el público, pero poco  a poco se fueron <br> sumando cliente al ver las ofertas propuestas. <br> No tenemos competencia, somos la mejor agencia de viajes y ofrecemos el mejor servicio que nuestros clientes puedan desear.</h3>
+            </div>
+            <div class="img2">
+
+              <img class="redondo" src="https://i.pinimg.com/originals/ca/25/cf/ca25cf43d6af9216a9c08a7229fd063c.jpg" width="700px"/>
+
+
+          </div>
+            <div class="contepresentacion2">
+              <h2>Actualidad</h2>
+              <h3>Actualmente nos hemos convertido en una página <br> de viajes muy concurrida por el público, los comentarios de <br> nuestros clientes son satisfactorios, las ventajas son muy <br> variadas, hay grandes ofertas y facilidad de pago.
+            </div>
+          </div>
+
         </div>
         <div id='frontendProductes'>
             <div id='productesLoading'>Carregant productes ...</div>
             <div id='productesContinguts' class='flexColumn'></div>
         </div>
         <div id='frontendContacte'>
-            Pàgina amb informacio de contacte
+
+            <div class="textocontacto">
+              <h2>VIAJES MUNDO IMPERIAL</h2>
+              <h3>Avenida Constitución, 23</h3>
+              <h3>08003 Barcelona</h3>
+              <h3>NIF: 25480860D </h3>
+               <h3 class="color"> telf: 938902525/677889065 </h3>
+              <h3 class="color2">Email: mundoimperial@hotmail.com</h3>
+
+
+            </div>
         </div>
         <div id='backofficeUsuaris'>
             <div id='backofficeUsuarisLoading'>Carregant usuaris ...</div>
@@ -96,7 +281,7 @@
                     <img id='backofficeUsuarisImg' src='/web/imatges/transparent.png' width='100'/>
                     <input id='backofficeUsuarisArxiu' class="dropFile" accept="image/*" type="file" onchange="seccioBackofficeUsuaris.mostraImatge()" />
                 </div>
-                
+
                 <br/>
                 <input type='button' value='Guarda' onclick='seccioBackofficeUsuaris.guardaDadesUsuariAlServidor()'/>
                 <br/>

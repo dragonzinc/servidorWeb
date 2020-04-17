@@ -23,6 +23,7 @@ class ObjNavegacio {
 
         // Mostrem el canvi de seccio
         this.mostraSeccio(seccioNova)
+
     }
 
     // Amaga la secció anterior i mostra la nova
@@ -33,7 +34,7 @@ class ObjNavegacio {
         // S'amaga la seccio que estava visible i es mostra la que s'ha demanat
         refActual.style.display = 'none'
         refNova.style.display = 'flex'
-        
+
         // La seccio actual passa a ser la que s'ha demanat
         this.seccioActual = seccioNova
 
@@ -49,3 +50,14 @@ class ObjNavegacio {
 }
 
 
+function mostrar() {
+document.getElementById("frontendMenuMobil").style.width = "300px";
+document.getElementById("abrir").style.display = "none";
+document.getElementById("cerrar").style.display = "inline";
+}
+
+function ocultar() {
+document.getElementById("frontendMenuMobil").style.width = "0";
+document.getElementById("abrir").style.display = "inline";
+document.getElementById("cerrar").style.display = "none";
+}

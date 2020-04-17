@@ -37,4 +37,3 @@ function iniciaSeccio(seccio) {
     default:
     }
 }
-
