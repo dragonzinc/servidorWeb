@@ -37,3 +37,11 @@ function iniciaSeccio(seccio) {
     default:
     }
 }
+function cambiafoto(foto){
+    document.getElementById('slide1').style.opacity=0
+    document.getElementById('slide2').style.opacity=0
+    document.getElementById('slide3').style.opacity=0
+    if (foto === 1) document.getElementById('slide1').style.opacity=1
+    if (foto === 2) document.getElementById('slide2').style.opacity=1
+    if (foto === 3) document.getElementById('slide3').style.opacity=1
+}

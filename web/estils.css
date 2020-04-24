@@ -62,6 +62,9 @@ body > #frontendProductes {
 
 body > #frontendProductes > #productesContinguts {
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 body > #frontendContacte {
@@ -299,4 +302,12 @@ margin-left: 30px
 }
 .color2{
   color: blue;
+}
+
+.producte {
+  border: solid 1px black;
+  margin: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
 }
