@@ -40,7 +40,7 @@ class Obj {
             await db.promiseQuery(sql)
             sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Madrid", "oferta del 40%", 800, "https://cdn.contexttravel.com/image/upload/c_fill,q_60,w_2600/v1555940004/production/city/hero_image_16_1555940004.jpg")'
             await db.promiseQuery(sql)
-            sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Tokyo", "oferta del 50%", 650, "https://gaijinpot.scdn3.secure.raxcdn.com/app/uploads/sites/6/2016/01/tokyo-1024x602.jpg")'
+            sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Tokyo", "oferta del 50%", 650, "https://www.nationalgeographic.com/content/dam/travel/Guide-Pages/asia/tokyo_travel.adapt.1900.1.jpg")'
             await db.promiseQuery(sql)
             sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Canada", "oferta del 10%", 900, "https://cdn.britannica.com/25/178125-050-4AA6ED25/Mount-Assiniboine-Canada-Alberta.jpg")'
             await db.promiseQuery(sql)
@@ -65,13 +65,24 @@ class Obj {
 
 
         // Demana la informació de productes
-        try {
-            sql = 'SELECT * FROM productes'
-            taula = await db.promiseQuery(sql)
-        } catch (e) {
-            console.error(e)
-            return result.json({ resultat: "ko", missatge: "Error, funció llistatProductes: ha fallat la crida a les dades"})
-        }
+        if (data.id) {
+             try {
+                 sql = 'SELECT * FROM productes WHERE id=' + data.id
+                 taula = await db.promiseQuery(sql)
+             } catch (e) {
+                 console.error(e)
+                 return result.json({ resultat: "ko", missatge: "Error, funció llistatProductes: ha fallat la crida a les dades"})
+             }
+         } else {
+             try {
+                 sql = 'SELECT * FROM productes'
+                 taula = await db.promiseQuery(sql)
+             } catch (e) {
+                 console.error(e)
+                 return result.json({ resultat: "ko", missatge: "Error, funció llistatProductes: ha fallat la crida a les dades"})
+             }
+         }
+
 
         // Si hem aconseguit dades corectament, tornem la taula resultant
         if (typeof taula === 'object' && typeof taula.length === 'number') {

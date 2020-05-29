@@ -13,6 +13,7 @@
         <script src='/web/script-popups.js'></script>
         <script src='/web/script-seccio-backofficeusuaris.js'></script>
         <script src='/web/script-seccio-frontendproductes.js'></script>
+         <script src='/web/script-seccio-frontendproducte.js'></script>
         <script src='/web/script-utils.js'></script>
         <script src='/web/script.js'></script>
 
@@ -130,20 +131,27 @@
 
 
         <div class="pasadorimagen">
-
+  <h2>PAISES MEJOR VALORAOS</h2>
 
           <div class="container">
 
             <ul class="slider">
-              <li id="slide1">
-                <img src="https://d.newsweek.com/en/full/1561143/amsterdam.jpg"/>
+              <li id="slide1" >
+                <img src="https://www.ngenespanol.com/wp-content/uploads/2018/08/Nuevo-museo-en-la-Estatua-de-la-Libertad.jpg" onclick= navegacio.canviaSeccio("frontendProducte&2") />
               </li>
               <li id="slide2">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3947459/sunset.jpg"/>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Paris_-_Eiffelturm_und_Marsfeld2.jpg/1200px-Paris_-_Eiffelturm_und_Marsfeld2.jpg" onclick= navegacio.canviaSeccio("frontendProducte&3") />
               </li>
               <li id="slide3">
-                <img src="https://traveltolivewebblog.files.wordpress.com/2018/04/el-monte-fuji-la-montana-mas-alta-de-japon-1440x810.jpg"/>
+                <img src="https://gaijinpot.scdn3.secure.raxcdn.com/app/uploads/sites/6/2016/01/tokyo-1024x602.jpg" onclick= navegacio.canviaSeccio("frontendProducte&5") />
               </li>
+              <li id="slide4">
+                <img src="https://inglaterraviajar.com/wp-content/uploads/2019/01/big-ben-en-londres.jpg" onclick= navegacio.canviaSeccio("frontendProducte&12") />
+              </li>
+              <li id="slide5">
+                <img src="https://www.worldatlas.com/r/w1200-h701-c1200x701/upload/97/4b/c8/shutterstock-64114618.jpg" onclick= navegacio.canviaSeccio("frontendProducte&10") />
+              </li>
+
             </ul>
 
             <ul class="menu">
@@ -156,6 +164,13 @@
                <li>
                 <a href="javascript://" onclick="cambiafoto(3)">3</a>
               </li>
+              <li>
+               <a href="javascript://" onclick="cambiafoto(4)">4</a>
+             </li>
+             <li>
+              <a href="javascript://" onclick="cambiafoto(5)">5</a>
+            </li>
+
             </ul>
 
           </div>
@@ -228,9 +243,13 @@
 
         </div>
         <div id='frontendProductes'>
-            <div id='productesLoading'>Carregant productes ...</div>
+            <div id='productesLoading'><div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active "></div></div>
             <div id='productesContinguts' class='flexColumn'></div>
         </div>
+        <div id='frontendProducte'>
+           <div id='producteLoading'><div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active "></div></div>
+           <div id='producteContinguts'></div>
+       </div>
         <div id='frontendContacte'>
 
             <div class="textocontacto">
@@ -290,5 +309,6 @@
                 <div id='backofficeUsuarisPopupError' class='none'>Error al guardar les dades ...</div>
             </div>
         </div>
+
     </body>
 </html>

@@ -59,6 +59,9 @@ body > #frontendPresentacio {
 body > #frontendProductes {
     display: none;
 }
+body > #frontendProducte {
+    display: none;
+}
 
 body > #frontendProductes > #productesContinguts {
     width: 100%;
@@ -110,6 +113,9 @@ body > #popups {
    display: block;
    max-width: 90%;
    margin: auto;
+   text-align: center;
+ }
+ .h2{
    text-align: center;
  }
  .pasadorimagen{
@@ -304,10 +310,31 @@ margin-left: 30px
   color: blue;
 }
 
-.producte {
-  border: solid 1px black;
-  margin: 8px;
-  padding: 8px;
-  display: flex;
+.img-productos{
+  width: 300px;
+  height: 300px;
+
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.productes{
+  text-align: center;
+}
+
+.detall {
   flex-direction: column;
+}
+.detall-nom{
+  font-size: 25px;
+  margin-left: auto;
+}
+.detall-descripcio{
+  font-size: 50px;
+}
+.detall-preu{
+  margin-top: 50px;
+  font-size: 100px;
+  color: red;
+
+
 }

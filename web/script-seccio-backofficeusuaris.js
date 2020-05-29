@@ -122,7 +122,7 @@ class ObjSeccioBackofficeUsuaris {
         // Amaga el botó esborra del popup
         refEsborra.style.display = 'none'
 
-        popups.mostraPopup('popupBackofficeUsuaris') 
+        popups.mostraPopup('popupBackofficeUsuaris')
     }
 
     // Guarda les dades del formulari d'usuari al servidor
@@ -170,7 +170,7 @@ class ObjSeccioBackofficeUsuaris {
             // Mostrem l'error per consola
             console.error(objRebut)
 
-            // Si no hem pogut guardar les dades, mostrem l'error una estona 
+            // Si no hem pogut guardar les dades, mostrem l'error una estona
             refError.style.display = 'flex'
             await promiseWait(1500)
             refError.style.display = 'none'
@@ -208,7 +208,7 @@ class ObjSeccioBackofficeUsuaris {
             // Mostrem l'error per consola
             console.error(objRebut)
 
-            // Si no hem pogut esborrar les dades, mostrem l'error una estona 
+            // Si no hem pogut esborrar les dades, mostrem l'error una estona
             refError.style.display = 'flex'
             await promiseWait(1500)
             refError.style.display = 'none'

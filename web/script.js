@@ -3,6 +3,7 @@ var navegacio = null
 var popups = null
 var seccioBackofficeUsuaris = null
 var seccioFrontendProductes = null
+var seccioFrontendProducte = null
 
 // Aquesta funció s'inicia al carregar la pàgina
 async function inicia () {
@@ -13,6 +14,7 @@ async function inicia () {
     popups = new ObjPopups()
     seccioBackofficeUsuaris = new ObjSeccioBackofficeUsuaris()
     seccioFrontendProductes = new ObjSeccioFrontendProductes()
+    seccioFrontendProducte = new ObjSeccioFrontendProducte()
 
     // Inicia les funcions de navegació HTML5
     navegacio.inicia()
@@ -30,18 +32,28 @@ async function inicia () {
     await login.autenticaAmbToken()
 }
 
-function iniciaSeccio(seccio) {
+function iniciaSeccio(seccio, id) {
     switch(seccio) {
     case 'frontendProductes': seccioFrontendProductes.iniciaSeccio(); break
+    case 'frontendProducte':  seccioFrontendProducte.iniciaSeccio(id); break
     case 'backofficeUsuaris': seccioBackofficeUsuaris.iniciaSeccio(); break
     default:
     }
 }
 function cambiafoto(foto){
-    document.getElementById('slide1').style.opacity=0
-    document.getElementById('slide2').style.opacity=0
-    document.getElementById('slide3').style.opacity=0
+    document.getElementById('slide1').style.display='none'
+    document.getElementById('slide2').style.display='none'
+    document.getElementById('slide3').style.display='none'
+    document.getElementById('slide4').style.display='none'
+    document.getElementById('slide5').style.display='none'
+    if (foto === 1) document.getElementById('slide1').style.display='block'
     if (foto === 1) document.getElementById('slide1').style.opacity=1
+    if (foto === 2) document.getElementById('slide2').style.display='block'
     if (foto === 2) document.getElementById('slide2').style.opacity=1
+    if (foto === 3) document.getElementById('slide3').style.display='block'
     if (foto === 3) document.getElementById('slide3').style.opacity=1
+    if (foto === 4) document.getElementById('slide4').style.display='block'
+    if (foto === 4) document.getElementById('slide4').style.opacity=1
+    if (foto === 5) document.getElementById('slide5').style.display='block'
+    if (foto === 5) document.getElementById('slide5').style.opacity=1
 }
